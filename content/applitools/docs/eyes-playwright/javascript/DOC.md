@@ -87,6 +87,7 @@ export default defineConfig({
 - **`fully: true`** — captures the full scrollable page, not just the visible viewport.
 - **`waitBeforeCapture`** — delays capture until a condition is met. Accepts a number (ms) or an async function (e.g., wait for a loader to disappear). Use this instead of `page.waitForSelector` to keep capture timing within the Eyes lifecycle.
 - **`ignoreDisplacements: true`** — suppresses vertical shift noise (e.g., pages where content loads and pushes elements down). Useful for infinite scroll or async-heavy pages.
+- **`scrollRootElement`** — set to the scrollable container (locator or CSS selector) when the page scrolls inside a custom element rather than `window`; required for `fully: true` to work correctly in SPAs.
 
 ```typescript
 import { test } from '@applitools/eyes-playwright';
