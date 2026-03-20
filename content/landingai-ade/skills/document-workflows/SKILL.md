@@ -18,6 +18,10 @@ description: >
   Use document-workflows when composing those operations into pipelines,
   or when you need visualization, annotation, or word-level grounding on
   parsed documents.
+metadata:
+  revision: 1
+  updated-on: "2026-03-10"
+  source: maintainer
 ---
 
 # Document Workflows — ADE Pipeline Patterns

@@ -1,6 +1,10 @@
 ---
 name: document-extraction
 description: Use this skill for intelligent document processing and content extraction using LandingAI's Agentic Document Extraction (ADE). Trigger when users need to (1) Parse documents (PDFs, images, spreadsheets, presentations) into structured Markdown with layout understanding, (2) Extract specific structured data from documents using schemas (invoice fields, form data, table data, etc.), (3) Classify and separate multi-document batches by type (invoices vs receipts, statements vs forms, etc.), (4) Process large documents asynchronously (up to 1GB/1000 pages), (5) Get visual grounding (bounding boxes, page numbers) for extracted content — use when users mention bounding boxes, word locations, grounding, highlighting extracted content, or showing where data appears in a document. Use this skill when the task involves understanding document content for a set of documents. In particular this skill can help you write code that run on sets of documents. This will increase speed, and reduce the cost of loading the documents on the Agent context window because you can use a single script to extract the information needed.
+metadata:
+  revision: 1
+  updated-on: "2026-03-10"
+  source: maintainer
 ---
 
 # Document Extraction (ADE)
@@ -73,18 +77,13 @@ EOF
 
 If not key is found instruct the user to get an API key from [https://va.landing.ai/settings/api-key](https://va.landing.ai/settings/api-key)
 
-Copy `.env-sample` to `.env` and add your API key:
+Create a `.env` file in your project directory and add your API key:
 
-```bash
-cp .env-sample .env
-```
-
-Edit `.env` and add your key:
 ```
 VISION_AGENT_API_KEY=your_actual_api_key_here
 ```
 
-**Note:** The `.env` file is gitignored for security. Advanced users can also set the environment variable directly: `export VISION_AGENT_API_KEY=<your-key>`
+**Note:** Never commit `.env` files to version control. Advanced users can also set the environment variable directly: `export VISION_AGENT_API_KEY=<your-key>`
 
 **EU Endpoint:** If using the EU endpoint, set `environment="eu"` when initializing the client.
 
